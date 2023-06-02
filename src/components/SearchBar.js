@@ -1,10 +1,12 @@
 import React from 'react'
 
-function SearchBar({search, setSearch}) {
+function SearchBar({search, setSearch, check, setCheck}) {
 
     const handleChange = (event) => {
         setSearch(event.target.value)}
 
+    const handleCheck = (event) => {
+        setCheck(!check)}
 
 
   return (
@@ -17,9 +19,11 @@ function SearchBar({search, setSearch}) {
           onChange={handleChange}
           placeholder='Search product'
         />
-        <label for="search-id">Search</label>
       </div>
-    <button type='checkbox'>Only show products in stock</button>
+    <input type="checkbox" 
+    onChange={handleCheck} 
+    value={check}/>
+    <label>Only products on stock</label>
     </>
   )
 }

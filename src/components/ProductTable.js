@@ -1,7 +1,7 @@
 import React from 'react'
 import ProductRow from './ProductRow'
 
-function ProductTable({products, search}){
+function ProductTable({products, search, check}){
 
 return (
     <table className="table">
@@ -21,6 +21,10 @@ return (
         return true
     }
 })
+
+.filter((oneproduct) => 
+    check ? oneproduct.inStock : true)
+    
     .map((product) => { 
                 return <ProductRow singleProduct={product} key= {product.name}/>})}   
         </tbody>
